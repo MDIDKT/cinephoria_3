@@ -24,14 +24,14 @@ class Reservation
     #[ORM\ManyToOne(inversedBy: 'reservations')]
     private ?Seance $seance = null;
 
-    #[ORM\ManyToOne(inversedBy: 'reservations')]
-    private ?User $user = null;
-
     /**
      * @var Collection<int, Place>
      */
     #[ORM\OneToMany(targetEntity: Place::class, mappedBy: 'reservations')]
     private Collection $places;
+
+    #[ORM\ManyToOne(inversedBy: 'reservations')]
+    private ?Utilisateur $utilisateur = null;
 
     public function __construct()
     {
@@ -79,17 +79,6 @@ class Reservation
         return $this;
     }
 
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(?User $user): static
-    {
-        $this->user = $user;
-
-        return $this;
-    }
 
     /**
      * @return Collection<int, Place>
@@ -117,6 +106,18 @@ class Reservation
                 $place->setReservation(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUtilisateur(): ?Utilisateur
+    {
+        return $this->utilisateur;
+    }
+
+    public function setUtilisateur(?Utilisateur $utilisateur): static
+    {
+        $this->utilisateur = $utilisateur;
 
         return $this;
     }

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page d'accueil{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <ul>
+            <li><button><a href="{{ path('app_admin_cinema_index') }}" >Cinéma</a></button></li>
+            <li><button><a href="{{ path('app_admin_commande_index') }}" >Commande</a></button></li>
+            <li><button><a href="{{ path('app_admin_film_index') }}" >Film</a></button></li>
+            <li><button><a href="{{ path('app_admin_place_index') }}" >Place</a></button></li>
+            <li><button><a href="{{ path('app_admin_qualite_index') }}" >Qualité</a></button></li>
+            <li><button><a href="{{ path('app_admin_reservation_index') }}" >Réservation</a></button></li>
+            <li><button><a href="{{ path('app_admin_salle_index') }}" >Salle</a></button></li>
+            <li><button><a href="{{ path('app_admin_seance_index') }}" >Séance</a></button></li>
+            <li><button><a href="{{ path('app_admin_utilisateur_index') }}" >Utilisateur</a></button></li>
+        </ul>
+    </div>
+
+
+{% endblock %}

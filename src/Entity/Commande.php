@@ -20,8 +20,9 @@ class Commande
     #[ORM\Column]
     private ?float $prixTotal = null;
 
-    #[ORM\ManyToOne(inversedBy: 'commandes')]
-    private ?User $user = null;
+
+    #[ORM\ManyToOne(inversedBy: 'Commandes')]
+    private ?Utilisateur $utilisateur = null;
 
     public function getId(): ?int
     {
@@ -52,14 +53,15 @@ class Commande
         return $this;
     }
 
-    public function getUser(): ?User
+
+    public function getUtilisateur(): ?Utilisateur
     {
-        return $this->user;
+        return $this->utilisateur;
     }
 
-    public function setUser(?User $user): static
+    public function setUtilisateur(?Utilisateur $utilisateur): static
     {
-        $this->user = $user;
+        $this->utilisateur = $utilisateur;
 
         return $this;
     }

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Qualite{% endblock %}
+
+{% block body %}
+    <h1>Qualite</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ qualite.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ qualite.nom }}</td>
+            </tr>
+            <tr>
+                <th>PrixQualite</th>
+                <td>{{ qualite.prixQualite }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_qualite_index') }}">back to list</a>
+
+    <a href="{{ path('app_admin_qualite_edit', {'id': qualite.id}) }}">edit</a>
+
+    {{ include('admin_qualite/_delete_form.html.twig') }}
+{% endblock %}
