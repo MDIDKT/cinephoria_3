@@ -14,7 +14,8 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/admin/seance')]
 class AdminSeanceController extends AbstractController
 {
-    #[Route('/', name: 'app_admin_seance_index', methods: ['GET'])]
+    #[Route('/', name: '
+    ', methods: ['GET'])]
     public function index(SeanceRepository $seanceRepository): Response
     {
         return $this->render('admin_seance/index.html.twig', [
