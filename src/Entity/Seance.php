@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\SeanceRepository;
+use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
@@ -17,10 +18,10 @@ class Seance
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $debut = null;
+    private ?DateTimeInterface $debut = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $fin = null;
+    private ?DateTimeInterface $fin = null;
 
     #[ORM\ManyToOne(inversedBy: 'seances')]
     private ?Salle $salle = null;
@@ -51,24 +52,24 @@ class Seance
         return $this->id;
     }
 
-    public function getDebut(): ?\DateTimeInterface
+    public function getDebut(): ?DateTimeInterface
     {
         return $this->debut;
     }
 
-    public function setDebut(\DateTimeInterface $debut): static
+    public function setDebut(DateTimeInterface $debut): static
     {
         $this->debut = $debut;
 
         return $this;
     }
 
-    public function getFin(): ?\DateTimeInterface
+    public function getFin(): ?DateTimeInterface
     {
         return $this->fin;
     }
 
-    public function setFin(\DateTimeInterface $fin): static
+    public function setFin(DateTimeInterface $fin): static
     {
         $this->fin = $fin;
 
